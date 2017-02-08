@@ -1,0 +1,124 @@
+<script>
+$("body").removeClass("login-body");
+$(".sidebar-toggle-box").click(function(){
+
+$('#sidebar').toggleClass('hide-left-bar');
+$('#main-content').toggleClass('merge-left');
+//$("#sidebar").addClass("hide-left-bar");
+//if($("#sidebar").hasClass("hide-left-bar")){
+//$("#sidebar").removeClass("hide-left-bar");
+//}
+});
+
+</script>
+<section id="container" ng-controller="indexController" >
+<!--header start-->
+<header class="header fixed-top clearfix">
+<!--logo start-->
+<div class="brand">
+
+    <a ui-sref="index" class="logo">
+        <img src="images/logo.png" alt="">
+    </a>
+    <div class="sidebar-toggle-box">
+        <div class="fa fa-bars"></div>
+    </div>
+</div>
+<!--logo end-->
+
+<div class="nav notify-row" id="top_menu">
+    <!--  notification start -->
+    <div class="heading">
+	<h3 align="center"> Book Inventory System </h3>
+	</div>
+    <!--  notification end -->
+</div>
+<div class="top-nav clearfix">
+    <!--search & user info start-->
+    <ul class="nav pull-right top-menu">
+        
+        <!-- user login dropdown start-->
+        <li class="dropdown">
+            <a data-toggle="dropdown" class="dropdown-toggle" href="">
+                <img alt="" src="images/avatar1_small.jpg">
+                <span class="username" ng-bind="UserData.userName"></span>
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu extended logout">
+                <li><a ui-sref="index.profile({userId:UserData._id})"><i class=" fa fa-pied-piper"></i>Profile</a></li>
+                <li><a ui-sref="index.changepwd({userId:UserData._id})"><i class=" fa fa-key"></i>Change password</a></li>
+                
+                <li><a ng-click="logout()" class="cursor"><i class="fa fa-sign-out"></i> Log Out</a></li>
+				
+            </ul>
+        </li>
+        <!-- user login dropdown end -->
+        <!-- <li>
+            <div class="toggle-right-box">
+                <div class="fa fa-bars"></div>
+            </div>
+        </li> -->
+    </ul>
+    <!--search & user info end-->
+</div>
+</header>
+<!--header end-->
+<aside>
+    <div id="sidebar" class="nav-collapse">
+        <!-- sidebar menu start-->
+        <ul class="sidebar-menu" id="nav-accordion">
+            <li>
+                <a ui-sref="index.dashboard" ui-sref-active="active">
+                    <i class="fa fa-dashboard"></i>
+                    <span>Dashboard</span>
+                </a>
+            </li>
+			<li>
+                <a ui-sref="index.checkin" ui-sref-active="active">
+                    <i class="fa fa-plus"></i>
+                    <span>Book CheckIn</span>
+                </a>
+            </li>
+			<li >
+				<a ui-sref="index.search" ui-sref-active="active">
+					<i class="fa fa-search"></i>
+					<span>Book Search</span>
+				</a>
+			</li>
+   
+            
+            <li>
+                <a ui-sref="index.list" ui-sref-active="active" ng-class="{active: $state.includes('index.details')}" ui-sref-active-eq="active">
+                    <i class="fa fa-list"></i>
+                    <span>Books List </span>
+                </a>
+            </li>
+            <li>
+                <a ui-sref="index.booksell" ui-sref-active="active">
+                    <i class="fa fa-shopping-cart"></i>
+                    <span>Books Sell </span>
+                </a>
+            </li>
+           <!-- <li class="sub-menu">
+                <a href="javascript:;">
+                    <i class="fa fa-th"></i>
+                    <span>Data Tables</span>
+                </a>
+                <ul class="sub">
+                    <li><a href="">category1</a></li>
+                    <li><a href="">category1</a></li>
+                    <li><a href="">category1</a></li>
+                    <li><a href="">category1</a></li>
+                </ul>
+            </li>
+			-->
+            
+            
+            
+        </ul>
+        <!-- sidebar menu end-->
+    </div>
+</aside>
+<!--sidebar end-->
+    <!--main content start-->
+ 

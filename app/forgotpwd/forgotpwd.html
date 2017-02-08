@@ -1,0 +1,38 @@
+<div  class="login-body" style="min-height:785px;">
+<div class="container " ng-controller="forgotpwdController">
+	<form class="form-signin form-forgotpwd" name="form">
+		<fieldset>
+			<h2 class="form-signin-heading">Forgot Password</h2>
+			<div class="login-wrap">
+				<div class="user-login-info">
+				
+
+		<div class="modal-body">
+		<p>Enter your e-mail address below to get your password.</p>
+
+		<input type="email" ng-model="emailId" name="emailId" placeholder="Email Id" required autocomplete="off" class="form-control placeholder-no-fix" >
+		<div class="form-error">
+			<div ng-show="form.emailId.$error.required && form.emailId.$dirty">
+				This field is required.!!
+			</div>
+			<div ng-show="form.emailId.$error.email && form.emailId.$dirty">
+				This is not a valid EmailId.
+			</div>
+		</div>
+
+		</div>
+		<div class="modal-footer">
+		
+		<input type="submit" name="submit" ng-disabled="form.$invalid" class="btn btn-primary" value="Submit" ng-click="forgotPassword(emailId)" />
+		</div>
+		
+					
+				</div>
+				
+				
+				
+			</div>
+		</fieldset>
+	</form>
+</div>
+</div>

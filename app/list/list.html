@@ -1,0 +1,75 @@
+<style> table,thead,th,tr,tbody,td {text-align:center;}</style>
+   <section id="main-content" class="">
+        <section class="wrapper">
+        
+       
+	<div  ng-controller="listController">
+	<section class="panel">
+			<header class="panel-heading">
+				Books list
+			</header>
+			<div class="panel-body">
+				<div class="position-left">
+					<div class="row">
+						<input type="text"  ng-model="userSearch" class="form-control list-input" placeholder="Search">		
+					</div>
+				
+				
+					
+<div class="row ">
+	<div class="col-md-12">		
+		<table class="table table-bordered table-striped table-condensed table-responsive text-center">
+			<thead>
+			<tr >
+				<th class="text-center">S.No</th>				
+				<th>Title</th>
+				<th>ISBN</th>
+				<th>Publisher</th>
+				<th class="numeric">Price</th>
+				<th class="numeric">Quantity</th>
+			</tr>
+			</thead>
+			<tbody>
+			<tr ng-repeat="data in books | filter:userSearch">
+				<td>{{$index+1}}</td>
+				
+				<td><a ui-sref="index.details({bookId:data._id})" ui-sref-active="active" class="selectedBook">{{data.title | uppercase}}</a></td>
+				<td>{{data.ISBN}}</td>
+				<td>{{data.publisher}}</td>
+				<td>{{data.price |currency }}</td>
+				<td>{{data.quantity}}</td>
+			</tr>
+			
+			</tbody>
+      	</table>
+		
+	</div>
+</div>
+	
+
+					
+					
+					
+				</div>
+			</div>
+		</section>
+		
+
+
+</div>
+</section>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,90 @@
+
+<script>
+
+	  $( ".errorMsgHide" ).fadeOut( 5000, function() {    
+  });
+</script>
+<body class="login-body">
+
+    <div class="container" ng-controller="loginController" >
+        <div ng-show="loginSuccess" class="alert alert-success fade in">
+            <button data-dismiss="alert" class="close close-sm" type="button">
+            <i class="fa fa-times"></i>
+            </button>
+            <span ng-bind="loginSuccess"></span>
+        </div>
+
+
+      <form class="form-signin" name="loginform" novalidate>
+        <h2 class="form-signin-heading">LogIn</h2>
+        <div class="login-wrap">
+        
+            <div class="user-login-info ">
+                <input type="email" ng-model="user.emailId" name="emailId" id="emailId" class="form-control " placeholder="Email ID" autofocus required>
+                <div class="form-error">
+                	<div ng-show="loginform.emailId.$error.required && loginform.emailId.$dirty ">
+                		This field is required.
+                	</div>
+                	<div ng-show="loginform.emailId.$error.email && loginform.emailId.$dirty">
+                		This is not a valid email id..
+                	</div>
+                </div>
+                <div class="has-error">
+                    
+                </div>
+                <input type="password" ng-model="user.password"  id="password" name="password" class="form-control" placeholder="Password" required>
+                <div class="form-error">
+                	<div ng-show="loginform.password.$error.required && loginform.password.$dirty">
+                		This field is required.
+                	</div>
+                	<!-- <div ng-show="loginform.password.$error.minlength && loginform.password.$dirty">
+                		Minimum 6 characters are required.
+                	</div>
+                	<div ng-show="loginform.password.$error.maxlength && loginform.password.$dirty">
+                		maximim 12 characters are allowed.
+                	</div> -->
+                </div> 
+				<div  ng-class="appliedClass(errorMsg)">
+				 <div class="error hideMsg"  ng-bind="errorMsg || errorMessage || errorMessage1" ></div>              
+				</div>
+			
+                
+
+            </div>
+
+            <label class="checkbox">
+                
+                <span class="pull-right">
+                    <a  ui-sref="forgotpwd"> Forgot Password?</a>
+                </span>
+            </label>
+
+            
+            <button class="btn btn-lg btn-login  btn-block" ng-disabled="!loginform.$valid " ng-click="checkLogin(user)">Submit</button>
+
+            <div class="registration">
+                Not a member?
+                <a class="" ui-sref="registration">
+                    Join Now	
+                </a>
+            </div>
+
+        </div>
+
+
+      </form>
+
+    </div>
+	</body>
+	
+	
+	
+<script>
+$("body").addClass("login-body");
+/*
+$( ".errorMsgHide" ).fadeOut( "4000", function() {    
+  });
+	*/  
+</script>
+
+	

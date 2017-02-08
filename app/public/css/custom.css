@@ -1,0 +1,124 @@
+.btn-register
+{
+	margin-left:10% !important;
+	padding:6px 16px;
+}
+.form-signin input[type="text"], .form-signin input[type="password"],.form-signin input[type="email"]
+{
+	font-size:14px;
+	color:#000;
+	margin-bottom: 15px;
+	
+}
+.form-forgotpwd
+{
+	min-width:500px;
+}
+.form-error
+{
+	color:red;
+	text-indent: 10px
+	font-size:12px;
+	
+}
+
+.form-checkin input
+{
+	font-size:14px;
+	color:#000;
+	margin-bottom:15px;
+	border: 1px solid #ccc;
+}
+.success
+{
+	font-size: 18px;
+	font-weight: bold;
+	color: green;
+}
+.form-signin .form-error
+{
+	text-indent: 5px;
+	margin-top: -5px;
+}
+.login-wrap .error
+{
+	text-align: center;
+	color: red;
+	font-size: 12px;
+}
+
+
+.form-checkin input[type="text"]
+{
+	font-size:14px;
+	color:#000;
+	margin-bottom: 15px;
+	
+}
+.form-checkin select
+{
+	font-size:14px;
+	color:#000;
+	margin-bottom: 15px;
+	border: 1px solid #ccc;
+	
+}
+
+
+.list-input
+{
+	width: 30%;
+	font-size:14px;
+	color:#000;
+	margin-bottom: 15px;
+	margin-left: 15px;
+	border: 1px solid #ccc;
+}
+.marginTop
+{
+	margin-top: 25px;
+}
+.errorMessage
+{
+	color: red;
+	
+}
+.selectedBook
+{
+	color: blue;
+}
+.selectedBook:hover
+{
+	cursor: hand;
+	text-decoration: underline;
+}
+.bolder
+{
+	font-weight: bold;
+	color: #333;
+}
+
+.loadingMsg 
+{
+	height: 900px;
+	width: 100%;
+	background: #000;
+	opacity: 0.5;
+	z-index: 2;
+	position: absolute;
+	top:0px;
+	left: 0px;
+}
+.loadingMsg i
+{
+	height: 100px;
+	width: 100px;
+	
+}
+.booksQntyBlk
+{
+	padding: 5px;
+	margin: 5px;
+	font-size: 14px;
+	color: #000;
+}

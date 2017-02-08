@@ -1,0 +1,36 @@
+<body class="login-body">
+	<div class="container" ng-controller="regController">
+	<!--<pre>{{form}}</pre> -->
+		<form class="form-signin" name="form"  >
+			<h2 class="form-signin-heading">Registration Form</h2>
+			<div class="login-wrap">			
+				<div class="user-login-info">
+					<input type="text" ng-model="userData.userName" class="form-control form_control" name="username"id="username" placeholder="User Name" required autofocus style="width:100%">
+					<div class="form-error required">
+						<div class="form-validation-message" ng-message="required" ng-show="form.username.$error.required && form.username.$dirty">This field is required				</div>
+					</div>					
+					<input type="email" ng-model="userData.emailId" class="form-control form_control" name="email" 
+					id="email"  placeholder="Email ID" required autofocus style="width:100%">
+					<div class="form-error required">
+						<div class="form-validation-message" ng-message="required" ng-show="form.email.$error.required && form.email.$dirty">This field is required</div>
+						<div class="form-validation-message" ng-message="email" ng-show="form.email.$error.email && form.email.$dirty">Email Id is not valid!</div>
+					</div>
+					<input type="password" ng-model="userData.password" ng-minlength="6" name="password" id="password" class="form-control form_control" required placeholder="Password" style="width:100%">
+					<div class="form-error required">
+						<div class="form-validation-message" ng-message="required" ng-show="form.password.$error.required && form.password.$dirty">This field is required</div>
+						<div class="form-validation-message" ng-show="form.password.$error.minlength">
+						Min 6 characters.</div>
+					</div>
+					<input type="password" ng-model="userData.conPassword" name="conPassword" id="conPassword" class="form-control form_control" required placeholder="Confirm Password" style="width:100%">		<div class="form-error required">
+						<div class="form-validation-message" ng-message="required" ng-show="form.conPassword.$error.required && form.conPassword.$dirty">This field is required</div>
+						<div class="form-validation-message" ng-show="userData.password !== userData.conPassword">Password did not match</div>
+					</div>
+				</div>
+				<input type="reset" class="btn btn-lg btn-login   btn-register"  name="reset" value="Reset">
+				<button class="btn btn-lg btn-login  btn-register" ng-disabled="!form.$valid || userData.password !== userData.conPassword" ng-click="userRegister(userData)">Submit</button>
+				<div class="registration">
+					Already Registered.<a class="" ui-sref="login">Login</a>
+				</div>
+			</div>
+		</form>
+	</div>

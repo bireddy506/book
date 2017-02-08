@@ -1,0 +1,97 @@
+<script>
+	  $( ".hideMsg" ).fadeOut( 4000, function() {    
+  });
+</script>
+<section id="main-content" class="">
+	<section class="wrapper">
+		<div ng-controller="checkinController">		
+			<div class="row">
+				<div class="col-lg-8">
+					<section class="panel">
+						<header class="panel-heading">
+							Books CheckIn 
+						</header>
+						<div ng-bind="insertMessage" class="success hideMsg ">							
+						</div>
+						<div ng-bind="errorMsg" class="error hideMsg">							
+						</div>
+						<div class="panel-body">
+							<div class="position-left">
+								<form  class="form-checkin" name="form">
+									<div class="form-group">
+										<label for="ISBN13">ISBN13<em>*</em></label>
+										<input type="text" class="form-control "  placeholder="ISBN13*" ng-model='books.ISBN13' name="ISBN13" id="ISBN13" required>
+										<div class="form-error required">
+											<div class="for
+											m-validation-message"   ng-show="form.ISBN13.$error.required && form.ISBN13.$dirty">This field is required</div>
+										</div>
+									</div>
+									<div class="form-group">
+										<label for="ISBN13">ISBN10<em>*</em></label>
+										<input type="text" class="form-control"  placeholder="ISBN10*" ng-model='books.ISBN10' name="ISBN10" id="ISBN10" required>
+										<div class="form-error required">
+											<div class="form-validation-message"   ng-show="form.ISBN10.$error.required && form.ISBN10.$dirty">This field is required</div>
+										</div>
+									</div>
+									<div class="form-group">
+										<label for="title">Title<em>*</em></label>
+										<input type="text" class="form-control"  placeholder="Title*" ng-model='books.title' name="title" id="title" required>
+										<div class="form-error required">
+											<div class="form-validation-message"   ng-show="form.title.$error.required && form.title.$dirty">This field is required</div>
+										</div>
+									</div>
+									<div class="form-group">
+										<label for="publisher">Publisher</label>
+										<input type="text" class="form-control"  placeholder="Publisher*" ng-model='books.publisher' name="publisher" id="publisher" required>
+										<div class="form-error required">
+											<div class="form-validation-message"   ng-show="form.publisher.$error.required && form.publisher.$dirty">This field is required</div>
+										</div>
+									</div>
+									<div class="form-group">
+										<label for="quantity">Quantity</label>
+										<input type="number" class="form-control"  placeholder="Quantity" ng-model='books.quantity' name="quantity" id="quantity"  ng-pattern="/^[0-9\s]*$/"  required>
+										<div class="form-error required">
+											<div class="form-validation-message" ng-message="pattern" ng-show="form.quantity.$error.pattern && form.quantity.$dirty">Allow only digits</div>
+											<div class="form-validation-message"   ng-show="form.quantity.$error.required && form.quantity.$dirty">This field is required</div> 
+										</div>
+									</div>
+									<div class="form-group">
+										<label for="price">Price</label>
+										<input type="number" class="form-control"  placeholder="Price" ng-model='books.price' name="price" id="price" required ng-pattern="/^[0-9\s]*$/">
+										<div class="form-error required">
+											<div class="form-validation-message"   ng-show="form.price.$error.required && form.price.$dirty">This field is required</div>
+											<div class="form-validation-message" ng-message="pattern" ng-show="form.price.$error.pattern && form.price.$dirty">Allow only digits</div> 
+										</div>										
+									</div>
+									<div class="form-group">
+										<label for="BinLocation">Bin Location</label>
+										<input type="text" class="form-control"  placeholder="Bin Location" ng-model='books.binlocation' name="binLocation" id="binlocation" >
+									</div>
+									<div class="form-group">
+										<label for="Reading">Reading Level</label>
+										<input type="text" class="form-control"  placeholder="Reading Level" ng-model='books.readinglevel' name="readingLevel" id="readingLevel" >
+									</div>									
+									<button type="Submit" class="btn btn-info" ng-disabled="!form.$valid " ng-click="booksInsert(books)">Submit</button>
+								</form>
+							</div>
+						</div>
+					</section>
+				</div>
+			</div>
+		</div>
+	</section>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

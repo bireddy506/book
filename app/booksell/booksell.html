@@ -1,0 +1,75 @@
+<script>
+	  $( ".hideMsg" ).fadeOut( 4000, function() {    
+  });
+</script>
+
+
+<section id="main-content" class="">
+    <section class="wrapper">
+		<div  ng-controller="bookSellController">
+		<!-- <div ng-show="loading" class="loadingMsg">
+	<i class="fa fa-spinner fa-pulse fa-2x fa-fw"></i>
+	<span class="sr-only">Loading...</span>
+</div> -->
+			<section class="panel">
+				<header class="panel-heading">
+					Books Sell 	 
+				</header>
+				<div ng-bind="successMsg2" class="success hideMsg ">							
+						</div>
+						<!-- <div ng-bind="errormessage" class="error hideMsg">							
+						</div> -->
+				<div class="panel-body">
+					<div class="position-left">
+						<div class="row ">
+							<div class="col-md-6">
+								<form class="form-checkin" name="form">
+									<div class="form-group">
+										 <select ng-model="book.bookId" ng-options="item._id as item.title for item in books" name="bookId" class="form-control" required ng-change="getBookId(book.bookId)" style="width: 60%;float: left; margin-right: 10px;">
+										<option value="">Select Book</option>
+										</select> 
+										<div class="booksQntyBlk" ng-show="bookQuaty">
+											Available books : <span ng-bind="bookQuantity" class="success"></span>	
+										</div>
+										
+										
+									</div>
+									<div class="form-group">
+										<input type="number" name="quantity" ng-model="book.quantity" id="book.quantity" placeholder="Quantity" class="form-control" required style="width: 60%;">
+										<div class="form-error">
+											<div ng-show="form.quantity.$error.required && form.quantity.$dirty">This filed is required</div>
+											<div ng-show="form.quantity.$error.number && form.quantity.$dirty">
+												Please enter only numbers.
+											</div>
+										</div>
+
+									</div>
+
+								 <button class="btn btn-success" ng-disabled="!form.$valid" ng-click="sellBook(book)">Sell</button>
+
+								</form>
+								
+								
+								 
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</div>
+</section>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

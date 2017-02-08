@@ -1,0 +1,96 @@
+<style> table,thead,th,tr,tbody,td {text-align:center;}</style>
+
+   <section id="main-content" class="">
+        <section class="wrapper">
+        
+       
+	<div  ng-controller="searchController">
+	<section class="panel">
+			<header class="panel-heading">
+				Books Search
+			</header>
+			<div class="panel-body">
+				<div class="position-left">
+				<div class="row">
+					<div class="col-lg-6">
+<form role="form" name="form" class="form-checkin">
+						<div class="form-group">
+							<label for="ISBN13">ISBN</label>
+							<input type="text" class="form-control"  placeholder="Enter ISBN" ng-model='searchBooks.ISBN' name="ISBN" id="ISBN"  ng-readonly="disableISBN" ng-keyup="disableButton(searchBooks.ISBN)">
+						</div>
+						<div class="text-center">OR</div>
+						<div class="form-group">
+							<label for="title">Title</label>
+							<input type="text" class="form-control"  placeholder="Enter Title" ng-model='searchBooks.title' name="title" id="title" ng-readonly="disableTitle" ng-keyup="disableButton2(searchBooks.title)">
+						</div>
+						
+						<button type="submit" class="btn btn-info" ng-if="searchbyISBN" ng-disabled="searchBooks.ISBN == '' && searchBooks.title == ''" ng-click="searchByValue('ISBN', searchBooks.ISBN)">
+                        Search By ISBN
+                      </button>
+                      
+                      <button type="submit" class="btn btn-info" ng-if="!searchbyISBN"  ng-disabled="searchBooks.ISBN == '' && searchBooks.title == ''" ng-click="searchByValue('title', searchBooks.title)">
+                          Search By Title
+                        </button>
+						
+						
+						
+						
+					</form>
+					
+					</div>
+				</div>
+				
+					
+<div class="row ">
+	<div class="col-md-8 marginTop">
+		<div ng-show="searchResultsBlk">
+		
+		 <div class="table-responsive">
+		  <table class="table table-bordered table-striped table-condensed table-responsive text-center">
+			<thead>
+			<tr >
+				<th class="text-center">S.No</th>
+				<th>ISBN</th>
+				<th>Title</th>
+				<th>Publisher</th>
+				<th class="numeric">Price</th>
+				<th class="numeric">Quantity</th>
+			</tr>
+			</thead>
+			<tbody>
+			<tr ng-repeat="data in bookResult">
+				<td>{{$index+1}}</td>
+				<td>{{data.ISBN}}</td>
+				<td>{{data.title}}</td>
+				<td>{{data.publisher}}</td>
+				<td>{{data.price |currency }}</td>
+				<td>{{data.quantity}}</td>
+			</tr>
+			
+			</tbody>
+                                </table>
+		 </div>
+		    
+		</div>
+		<div ng-show="errorMsgBlk" class="errorMessage">
+			<div ng-bind="errorMsg"></div>
+		</div>
+		
+	</div>
+</div>
+	
+
+					
+					
+					
+				</div>
+			</div>
+		</section>
+		
+
+
+</div>
+</section>
+</section>
+
+
